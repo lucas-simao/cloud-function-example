@@ -7,7 +7,7 @@ import (
 	"os"
 
 	"github.com/GoogleCloudPlatform/functions-framework-go/funcframework"
-	handler "github.com/beta-exchange/cloud-function-example"
+	handler "github.com/lucas-simao/cloud-function-example"
 )
 
 func main() {
