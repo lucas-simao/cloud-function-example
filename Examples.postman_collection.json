@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "588f603d-cb57-413f-a75f-54fb3322a43c",
+		"name": "Examples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1257173"
+	},
+	"item": [
+		{
+			"name": "cloud function call test",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"Message\":{\n        \"Data\":[123, 10, 9, 9, 34, 116, 105, 116, 108, 101, 34, 58, 32, 34, 84, 104, 105, 115, 32, 105, 115, 32, 97, 32, 84, 105, 116, 108, 101, 34, 44, 10, 9, 9, 34, 98, 111, 100, 121, 34, 58, 32, 34, 97, 110, 100, 32, 116, 104, 105, 115, 32, 105, 115, 32, 97, 32, 98, 111, 100, 121, 34, 44, 10, 9, 9, 34, 118, 97, 108, 117, 101, 34, 58, 32, 49, 48, 48, 46, 50, 53, 10, 9, 125],\n        \"message_id\":\"123-teste-msg-id\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

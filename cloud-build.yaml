@@ -1,0 +1,27 @@
+steps:
+- name: "gcr.io/cloud-builders/go"
+  entrypoint: "sh"
+  args:
+    - "-c"
+    - |
+      git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/beta-exchange".insteadOf "https://github.com/beta-exchange"
+      go mod vendor
+  secretEnv: ['GO_MODULES_TOKEN']
+
+- name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+  args: [
+    'gcloud',
+    'alpha',
+    'functions',
+    'deploy',
+    'cf-example',
+    '--entry-point=Handler',
+    '--allow-unauthenticated',
+    '--region=southamerica-east1',
+    '--project=$PROJECT_ID',
+    '--timeout=120',
+    '--source=.',
+    '--trigger-http',
+    '--runtime=go116',
+    '--set-env-vars=GAE_ENV=CLOUD',
+  ]
